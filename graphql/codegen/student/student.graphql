@@ -1,0 +1,41 @@
+query students {
+  students {
+    id
+    studentIdentifier
+    studentJson
+  }
+}
+
+mutation newOrganization{
+ newOrganization(data: {name: "Axacme"} ) {
+   id
+   name
+  }  
+} 
+
+mutation createNewStudent($values: StudentInputInput!) {
+  newStudent(values: $values) {
+    id
+    studentIdentifier
+    studentJson
+  }
+}
+
+query getOneStudent($id: BigInteger) {
+  student(id: $id) {
+    id
+    studentIdentifier
+    studentJson
+  }
+}
+
+mutation updateStudent($data: StudentInputInput!) {
+  updateStudent(data: $data) 
+}
+
+mutation deleteStudent($id: BigInteger!) {
+  deleteStudent(id: $id)  
+}
+ 
+
+ 
